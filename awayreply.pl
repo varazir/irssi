@@ -8,6 +8,6 @@ $VERSION="0.0.1";
 	contact=> 'varazir@freenode',
 	name=> 'awayreply',
 	description=> 'Reply to a new private message if you are away',
-	license=> 'GPL v2',
+	license=> 'GPL v3',
 	url=> '',
 );
