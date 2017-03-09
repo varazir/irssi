@@ -13,13 +13,15 @@ $VERSION="0.0.1";
 );
 
 sub away_reply {
-    my ( $server, $msg, $nick, $address, $target ) = @_;
+    my ( $server, $msg, $nick ) = @_;
     my $awaymsg = Irssi::settings_get_str('away_reply');
+    return if $server->query_find($nick);
+    
     if ($server->{usermode_away}) {
-       $server->command("EVAL NOTICE $nick $awaymsg");
+       $server->command("MSG $nick $awaymsg");
        }
 }
 
 
-Irssi::signal_add_last('query created', 'away_reply');
+Irssi::signal_add_last('message private', 'away_reply');
 Irssi::settings_add_str('away',         'away_reply', 'I am not at the keyboard right now');
