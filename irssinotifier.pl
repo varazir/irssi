@@ -1,1 +1,0 @@
-../IrssiNotifier/Irssi/irssinotifier.pl
